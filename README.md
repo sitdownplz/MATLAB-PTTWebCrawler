@@ -5,10 +5,15 @@
 
 若是使用者不具備文本分析工具箱，可用一般文字處理手法移除
 
+- 2022/06/23 更新<br>
+增加一般文字處理 通用表達式置換(regexprep)，移除HTML標籤程式碼
+
 <img src='https://i.imgur.com/fwCU3LX.png' alt="script snapshot" width="600" height="500">
 
 ### MATLAB工具箱需求 (MATLAB Toolbox Requirement)
+###### \*建議安裝文本分析工具箱 (Text Analytics Toolbox)
 * 無 None
+
 
 ### 使用說明 Syntax
 函式語法
@@ -33,3 +38,4 @@
     - R2020b
     - R2021a
     - R2021b
+    - R2022a
