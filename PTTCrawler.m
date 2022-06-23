@@ -68,8 +68,15 @@ end
         Reply = regexp(Ptt_raw,'<?div class="nrec">.*?</div>?','match')';    % 回覆數量
         structTable = [Reply,Date,Author,Title];
         
+        % 移除 HTML Tags
         % ===== Text Analytics Toolbox Required ======
         cleanData = string(cellfun(@eraseTags,structTable,'UniformOutput',0)); % eraseTags: 刪除網頁標籤
+        % ============================================
+        
+        % If Text Analytics Toolbox Not Installed, Use This Line instead 
+        % ============================================
+        %         cleanData = string(cellfun(@(x)regexprep(x,'(<.*?>)',''),structTable,'UniformOutput',0));
+        % ============================================
         cleanData = regexprep(cleanData,'(\n|\t|\r| )','');
         
         Data = array2table(cleanData,'VariableNames',{'Reply','Date','Author','Title'});
